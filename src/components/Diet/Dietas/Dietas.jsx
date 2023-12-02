@@ -11,7 +11,7 @@ const Dietas = () => {
   useEffect(() => {
     const fetchDietasNombres = async () => {
       try {
-        const response = await axios.get('http://localhost:3500/api/recetas/dietas/nombres', {
+        const response = await axios.get(`${BASE_URL}:3500/api/recetas/dietas/nombres`, {
           headers: {
               Authorization: `Bearer ${authToken}`,
           },
@@ -27,7 +27,7 @@ const Dietas = () => {
 
   const handleVerDietasClick = async (dietaNombre) => {
     try {
-      const response = await axios.get(`http://localhost:3500/api/recetas/collection/${dietaNombre}`, {
+      const response = await axios.get(`${BASE_URL}/api/recetas/collection/${dietaNombre}`, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -48,7 +48,7 @@ const Dietas = () => {
   const handleEliminarDieta = async (dietaNombre) => {
     try {
       console.log(dietaNombre);
-      await axios.delete(`http://localhost:3500/api/recetas/dietas/${dietaNombre}`, {
+      await axios.delete(`${BASE_URL}/api/recetas/dietas/${dietaNombre}`, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },

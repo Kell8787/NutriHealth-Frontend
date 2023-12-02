@@ -6,6 +6,8 @@ import {Link} from 'react-router-dom';
 import CardCollection from '../CardCollection/CardCollection';
 import { getAuthToken } from '../../MainPage/Login/TokenKey/TokenKey';
 
+const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
+
 function RecipeCollection(){
   const [apiConfig, setApiConfig] = useState({});
 const [recipes, setRecipes] = useState([]);
@@ -18,7 +20,7 @@ useEffect(() => {
   const fetchRecipes = async () => {
     try {
       const authToken = getAuthToken();
-      const recipesResponse = await axios.get('http://localhost:3500/api/recetas/user', {
+      const recipesResponse = await axios.get(`${BASE_URL}:3500/api/recetas/user`, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -33,7 +35,7 @@ useEffect(() => {
   const fetchDietCount = async () => {
     try {
       const authToken = getAuthToken(); // Obtén el token de autenticación
-      const dietCountResponse = await axios.get('http://localhost:3500/api/recetas/collection/count', {
+      const dietCountResponse = await axios.get(`${BASE_URL}3500/api/recetas/collection/count`, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -53,7 +55,7 @@ useEffect(() => {
   };
   async function fetchConfig() {
     try {
-      const response = await axios.get('http://localhost:3500/api/config/config');
+      const response = await axios.get(`${BASE_URL}:3500/api/config/config`);
       setApiConfig(response.data);
       console.log(response.data);
     } catch (error) {
@@ -110,7 +112,7 @@ const handleCreateDieta = async () => {
 
     // Realiza una solicitud POST para crear una nueva dieta
     const response = await axios.post(
-'http://localhost:3500/api/recetas/collection',
+`${BASE_URL}:3500/api/recetas/collection`,
 {
   recetasIds: recipeIds,
   nombreDieta: `Dieta ${padZeroes(dietCount + 1)}`,

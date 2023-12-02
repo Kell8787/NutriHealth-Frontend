@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {saveAuthToken} from './TokenKey/TokenKey';
 
+const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
 
 
 function Login({ onClose }) {
@@ -17,7 +18,7 @@ function Login({ onClose }) {
   const [password, setPassword] = useState('');
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:3500/api/auth/login', { username, password });
+      const response = await axios.post(`${BASE_URL}:3500/api/auth/login`, { username, password });
 
       const { token } = response.data;
       saveAuthToken(token);

@@ -4,6 +4,8 @@ import IconFacebook from '../../svg/IconFacebook';
 import IconInstagram from '../../svg/IconInstagram';
 import IconGoogleCircle from '../../svg/IconGoogleCircle';
 
+const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
+
 function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
@@ -11,7 +13,7 @@ function Register() {
   const handleRegister = async () => {
     try {
       // Registro de usuario
-      await axios.post('http://localhost:3500/api/auth/register', { username, email, password });
+      await axios.post(`${BASE_URL}/api/auth/register`, { username, email, password });
       console.log('Registro exitoso!');
     } catch (error) {
       console.error('Error en el registro:', error);

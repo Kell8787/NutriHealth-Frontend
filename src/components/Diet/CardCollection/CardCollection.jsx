@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 
+const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
+
 const CardCollection = ({ recipe, onRecipeClick }) => {
   const handleDeleteClick = async () => {
     try {
       // Realiza una solicitud DELETE al backend para eliminar la receta
-      await axios.delete(`http://localhost:3500/api/recetas/${recipe._id}`);
+      await axios.delete(`${BASE_URL}:3500/api/recetas/${recipe._id}`);
       // Llama a la función onDeleteClick con el id de la receta
       window.location.reload();
     } catch (error) {
