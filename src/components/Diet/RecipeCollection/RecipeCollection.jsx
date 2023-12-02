@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 import CardCollection from '../CardCollection/CardCollection';
 import { getAuthToken } from '../../MainPage/Login/TokenKey/TokenKey';
 
-const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
+const BASE_URL = `${import.meta.env.VITE_API_URL}`; 
 
 function RecipeCollection(){
   const [apiConfig, setApiConfig] = useState({});
@@ -35,7 +35,7 @@ useEffect(() => {
   const fetchDietCount = async () => {
     try {
       const authToken = getAuthToken(); // Obtén el token de autenticación
-      const dietCountResponse = await axios.get(`${BASE_URL}3500/api/recetas/collection/count`, {
+      const dietCountResponse = await axios.get(`${BASE_URL}:3500/api/recetas/collection/count`, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },

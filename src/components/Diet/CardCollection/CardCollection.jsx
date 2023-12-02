@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
+const BASE_URL = `${import.meta.env.VITE_API_URL}`; 
 
 const CardCollection = ({ recipe, onRecipeClick }) => {
   const handleDeleteClick = async () => {

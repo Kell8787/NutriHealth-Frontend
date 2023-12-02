@@ -3,6 +3,8 @@ import axios from 'axios';
 import DietaCard from './DietaCard/DietaCard';
 import {getAuthToken} from '../../MainPage/Login/TokenKey/TokenKey';
 
+const BASE_URL = `${import.meta.env.VITE_API_URL}`; 
+
 const Dietas = () => {
   const [recetasIds, setRecetasIds] = useState([]);
   const [dietasNombres, setDietasNombres] = useState([]);
