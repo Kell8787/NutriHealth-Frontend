@@ -89,12 +89,14 @@ function Login({ onClose }) {
                     Olvidaste tu contraseña?
                   </a> */}
                   
-                      <button
-                        onClick={handleLogin}
-                        className='w-auto h-auto bg-button-1 p-2 m-3 rounded-3xl hover:scale-110 hover:font-bold transition-transform duration-300 text-text-sec'
-                      >
-                        Iniciar Sesión
-                      </button>
+                      <Link to = "/">
+                        <button
+                          onClick={handleLogin}
+                          className='w-auto h-auto bg-button-1 p-2 m-3 rounded-3xl hover:scale-110 hover:font-bold transition-transform duration-300 text-text-sec'
+                        >
+                          Iniciar Sesión
+                        </button>
+                      </Link>
                   
                 </form>
                 {/* <div className='w-full bg-main-2 rounded-3xl'>
