@@ -3,8 +3,6 @@ import axios from 'axios';
 import DietaCard from './DietaCard/DietaCard';
 import {getAuthToken} from '../../MainPage/Login/TokenKey/TokenKey';
 
-const BASE_URL = `${import.meta.env.VITE_API_URL}`; 
-
 const Dietas = () => {
   const [recetasIds, setRecetasIds] = useState([]);
   const [dietasNombres, setDietasNombres] = useState([]);
@@ -13,7 +11,7 @@ const Dietas = () => {
   useEffect(() => {
     const fetchDietasNombres = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}:3500/api/recetas/dietas/nombres`, {
+        const response = await axios.get(`${BASE_URL}recetas/dietas/nombres`, {
           headers: {
               Authorization: `Bearer ${authToken}`,
           },
@@ -29,7 +27,7 @@ const Dietas = () => {
 
   const handleVerDietasClick = async (dietaNombre) => {
     try {
-      const response = await axios.get(`${BASE_URL}/api/recetas/collection/${dietaNombre}`, {
+      const response = await axios.get(`${BASE_URL}recetas/collection/${dietaNombre}`, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },
@@ -50,7 +48,7 @@ const Dietas = () => {
   const handleEliminarDieta = async (dietaNombre) => {
     try {
       console.log(dietaNombre);
-      await axios.delete(`${BASE_URL}/api/recetas/dietas/${dietaNombre}`, {
+      await axios.delete(`${BASE_URL}recetas/dietas/${dietaNombre}`, {
         headers: {
           Authorization: `Bearer ${authToken}`,
         },

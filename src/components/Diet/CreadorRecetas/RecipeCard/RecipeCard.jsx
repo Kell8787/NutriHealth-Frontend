@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { getAuthToken } from '../../../MainPage/Login/TokenKey/TokenKey';
 function RecipeCard({ recipe, addToCollection, OnRecipeClick }) {
+  
   const calories = recipe.nutrition ? recipe.nutrition.nutrients.find((nutrient) => nutrient.name === 'Calories') : null;
   const caloriesAmount = calories ? calories.amount.toFixed(2) : 'No disponible';
   const [fav, setFav] = useState(false);

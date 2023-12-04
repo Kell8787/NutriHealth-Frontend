@@ -6,7 +6,7 @@ import Pagination from './Pagination/Pagination';
 import { getAuthToken } from '../../MainPage/Login/TokenKey/TokenKey';
 
 
-const BASE_URL = `${import.meta.env.VITE_API_URL}`; 
+
 
 function CreadorRecetas() {
   const [apiConfig, setApiConfig] = useState({});
@@ -21,10 +21,11 @@ function CreadorRecetas() {
   console.log(authToken);
 
   useEffect(() => {
+    const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
     // Hacer la solicitud al servidor para obtener las claves de API
     async function fetchConfig() {
       try {
-        const response = await axios.get(`${BASE_URL}:3500/api/config/config`);
+        const response = await axios.get(`${BASE_URL}config/config}`);
         setApiConfig(response.data);
         console.log(response.data);
       } catch (error) {
