@@ -117,7 +117,7 @@ function CreadorRecetas() {
   
       // Si llega hasta aquí, la receta no está en la colección y puede agregarla
       const response = await axios.post(
-        'http://localhost:3500/api/recetas/createReceta',
+        `${BASE_URL}recetas/createReceta`,
         {
           id: recipe.id,
           title: recipe.title,
