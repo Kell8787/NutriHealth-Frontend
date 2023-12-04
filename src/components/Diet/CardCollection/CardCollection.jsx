@@ -1,10 +1,12 @@
 import React from 'react';
 import axios from 'axios';
+import { getAuthToken } from "../../MainPage/Login/TokenKey/TokenKey";
 
  
 
 const CardCollection = ({ recipe, onRecipeClick }) => {
   const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
+  const authToken = getAuthToken(); // Obtén el token de autenticación
   const handleDeleteClick = async () => {
     try {
       // Realiza una solicitud DELETE al backend para eliminar la receta
