@@ -19,9 +19,9 @@ function CreadorRecetas() {
   const recipesPerPage = 10;
   const authToken = getAuthToken();
   console.log(authToken);
-
+  const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
   useEffect(() => {
-    const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
+   
     // Hacer la solicitud al servidor para obtener las claves de API
     async function fetchConfig() {
       try {
