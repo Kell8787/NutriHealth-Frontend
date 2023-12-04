@@ -8,7 +8,7 @@ const CardCollection = ({ recipe, onRecipeClick }) => {
   const handleDeleteClick = async () => {
     try {
       // Realiza una solicitud DELETE al backend para eliminar la receta
-      await axios.delete(`${BASE_URL}recetas/${recipe._id}`);
+      await axios.delete(`${BASE_URL}recetas/${recipe.id}`);
       // Llama a la función onDeleteClick con el id de la receta
       window.location.reload();
     } catch (error) {
