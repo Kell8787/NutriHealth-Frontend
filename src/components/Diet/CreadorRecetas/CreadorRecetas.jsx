@@ -25,7 +25,7 @@ function CreadorRecetas() {
     // Hacer la solicitud al servidor para obtener las claves de API
     async function fetchConfig() {
       try {
-        const response = await axios.get(`${BASE_URL}config/config}`);
+        const response = await axios.get(`${BASE_URL}config/config`);
         setApiConfig(response.data);
         console.log(response.data);
       } catch (error) {

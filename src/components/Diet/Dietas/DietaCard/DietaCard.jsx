@@ -7,6 +7,7 @@ import RecipePopup from '../../CreadorRecetas/RecipePopup/RecipePopup';
 
 const DietaCard = ({ recetasIds }) => {
   const [apiConfig, setApiConfig] = useState({});
+  const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
 
   const [recetas, setRecetas] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -17,7 +18,7 @@ const DietaCard = ({ recetasIds }) => {
       try {
 
         const promises = recetasIds.map((id) =>
-          axios.get(`http://localhost:3500/api/recetas/${id}`, {
+          axios.get(`${BASE_URL}recetas/${id}`, {
             headers: {
               Authorization: `Bearer ${authToken}`,
             },
@@ -32,7 +33,7 @@ const DietaCard = ({ recetasIds }) => {
       }
       async function fetchConfig() {
         try {
-          const response = await axios.get('http://localhost:3500/api/config/config');
+          const response = await axios.get(`${BASE_URL}config/config`);
           setApiConfig(response.data);
           console.log(response.data);
         } catch (error) {

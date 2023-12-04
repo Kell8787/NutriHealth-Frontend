@@ -7,6 +7,7 @@ const Dietas = () => {
   const [recetasIds, setRecetasIds] = useState([]);
   const [dietasNombres, setDietasNombres] = useState([]);
   const authToken = getAuthToken(); // Obtén el token de autenticación
+  const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
 
   useEffect(() => {
     const fetchDietasNombres = async () => {
