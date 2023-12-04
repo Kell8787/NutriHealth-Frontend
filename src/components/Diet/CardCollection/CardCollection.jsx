@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
-const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
+ 
 
 const CardCollection = ({ recipe, onRecipeClick }) => {
+  const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
   const handleDeleteClick = async () => {
     try {
       // Realiza una solicitud DELETE al backend para eliminar la receta
