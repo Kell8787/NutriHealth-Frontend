@@ -24,8 +24,9 @@ function Login({ onClose }) {
       saveAuthToken(token);
       
       // Redirigir al usuario a otra página después del login exitoso
-      window.location.href = '/';
       setIsOpen(onClose);
+
+      window.location.href = '/';
      
     } catch (error) {
       console.error('Error en el login:', error);
