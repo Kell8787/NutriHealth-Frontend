@@ -9,13 +9,15 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {saveAuthToken} from './TokenKey/TokenKey';
 
-const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
 
 
 function Login({ onClose }) {
+  const BASE_URL = `${import.meta.env.VITE_API_URL}/api/`; 
   const [isOpen, setIsOpen] = useState(true);
   const [username, setIdentifier] = useState('');
   const [password, setPassword] = useState('');
+  
+  
   const handleLogin = async () => {
     try {
       const response = await axios.post(`${BASE_URL}auth/login`, { username, password });
