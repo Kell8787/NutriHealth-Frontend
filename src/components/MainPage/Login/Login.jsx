@@ -59,7 +59,7 @@ function Login({ onClose }) {
                 </Link>
               </div>
               <div className='bg-main-1 rounded-3xl mb-10 p-5'>
-                <form action='/Login' name='Login' className='flex flex-col'>
+                <form action='/login' name='login' className='flex flex-col'>
                   <div className='flex flex-col'>
                     <label htmlFor='username' className='text-text-sec'>Nombre de Usuario</label>
                     <div className='flex flex-row content-bottom'>
