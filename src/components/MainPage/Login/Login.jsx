@@ -25,7 +25,7 @@ function Login({ onClose }) {
       
       // Redirigir al usuario a otra página después del login exitoso
       window.location.href = '/';
-      setIsOpen(!isOpen);
+      setIsOpen(onClose);
      
     } catch (error) {
       console.error('Error en el login:', error);
